@@ -57,16 +57,16 @@
        <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">Gaurav Agrawal</span>
+              <img src="{{ Auth::user()->photo->file }}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                <img src="{{ Auth::user()->photo->file }}" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                {{ Auth::user()->name }} - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -99,10 +99,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+          <img src="{{ Auth::user()->photo->file }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Gaurav Agrawal</p>
+          <p>{{ Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -139,7 +139,7 @@
           <ul class="treeview-menu">
           <li><a href="{{route('users.index')}}"><i class="fa fa-circle-o"></i> All User</a></li>
             <li><a href="{{route('users.create')}}"><i class="fa fa-circle-o"></i> Create User</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Edit User</a></li>
+            
             
       
           </ul>
@@ -153,26 +153,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> All Post</a></li>
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Create Post</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Edit Post</a></li>
-            
+          <li><a href="{{route('posts.index')}}"><i class="fa fa-circle-o"></i> All Post</a></li>
+            <li><a href="{{route('posts.create')}}"><i class="fa fa-circle-o"></i> Create Post</a></li>
+                      
   
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Categories</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-          </ul>
-        </li>
+        <li><a href="{{route('categories.index')}}"><i class="fa fa-book"></i> <span>Categories</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Media</span>

@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -51,5 +52,20 @@ class User extends Authenticatable
         return $this->belongsTo('App\Photo');
 
 
+    }
+
+    public function isAdmin()
+    {
+
+        if($this->role->name =="Admin" && $this->is_active==1)
+        {
+        return true;    
+        }
+        return false;
+    }
+
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
     }
 }
