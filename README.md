@@ -5,4 +5,4 @@ I Love :coffee: :watermelon: :lemon: :video_game: and :computer:.
 
 <br>
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](gauravagrawal855@gmail.com)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/gauravamzu)
